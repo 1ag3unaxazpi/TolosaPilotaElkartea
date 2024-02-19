@@ -1,0 +1,104 @@
+:root{
+    --kolore-nagusia: rgb(177, 121, 47);
+}
+
+body{
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: stretch;
+    font-family: Montserrat;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    height: 10vh;
+    align-items: center;
+    justify-content: stretch;
+}
+
+.header-left{
+    display: flex;
+    flex-direction: row;
+}
+
+.header-left .logo{
+    height: 6vh;
+    margin-left: 1vw;
+}
+
+.header-center{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.header-center .esteka{
+    text-decoration: none;
+    color: black;
+    margin-right: 5vw;
+    transition: all 0.3s;
+}
+
+.header-center .esteka:hover{
+    color: var(--kolore-nagusia);
+}
+
+.header-right{
+    display: flex;
+    flex-direction: row;
+}
+
+.header-right .botoia{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    padding-inline: 20px;
+    background-color: var(--kolore-nagusia);
+    margin-left: 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: white;
+    border: solid 1px white;
+    transition: all 0.3s;
+}
+
+.header-right .botoia:hover{
+    color: var(--kolore-nagusia);
+    background-color: white;
+    border: 1px solid var(--kolore-nagusia);
+}
+
+.header-right .botoia-tx{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    padding-inline: 20px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid var(--kolore-nagusia);
+    margin-inline: 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: var(--kolore-nagusia);
+    transition: all 0.3s;
+}
+
+.header-right .botoia-tx:hover{
+    color: white;
+    background-color: var(--kolore-nagusia);
+}
+
+main{
+    flex-grow: 1;
+}
+
+footer{
+    height: 15vh;
+}
