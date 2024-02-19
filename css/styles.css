@@ -6,7 +6,7 @@ body{
     margin: 0px;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
     justify-content: stretch;
     font-family: Montserrat;
 }
@@ -97,6 +97,27 @@ header{
 
 main{
     flex-grow: 1;
+}
+
+.main-sarrera{
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    background-image: url(../resources/fondo_pilota.png);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: top right;
+    padding: 12vw;
+}
+
+.main-sarrera-h1{
+    font-size: 4vw;
+    font-weight: lighter;
+}
+
+.main-sarrera-desc{
+    max-width: 40vw;
+    font-size: 1vw;
 }
 
 footer{
