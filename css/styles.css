@@ -425,7 +425,7 @@ main{
 .kontaktua-cont{
     display: flex;
     flex-direction: column;
-    padding: 120px;
+    padding: 4vw;
 }
 
 .kontaktua-cont form{
