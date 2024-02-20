@@ -19,10 +19,12 @@
     flex-direction: column;
     justify-content: stretch;
     align-items: stretch;
+    border-radius: 2px;
+    font-family: Montserrat;
 }
 
 .login-cont-logo{
-    height: 40%;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,21 +36,57 @@
 }
 
 .login-cont-form{
+    flex-grow: 3;
     padding: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: stretch;
+    justify-content: flex-start;
 }
 
 .login-cont-form-user{
-    flex-grow: 1;
+    margin-bottom: 20px;
 }
 
 .login-cont-form input{
     border: none;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid rgb(206, 206, 206);
+    color: rgb(61, 61, 61);
     height: 50px;
     width: 100%;
+    font-family: Montserrat;
+}
+
+.login-cont-form input:focus{
+    outline: none;
+}
+
+.login-cont-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.login-cont-footer-bt{
+    width: 100%;
+    padding-block: 10px;
+    border-radius: 2px;
+    background-color: var(--kolore-nagusia);
+    border: 1px solid var(--kolore-nagusia);
+    font-size: 17px;
+    color: white;
+    font-family: Montserrat;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.login-cont-footer-bt:hover{
+    background-color: white;
+    color: var(--kolore-nagusia);
+}
+
+.login-cont-footer-bt:focus{
+    overflow: none;
 }
 
 
