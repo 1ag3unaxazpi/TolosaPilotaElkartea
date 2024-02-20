@@ -1,5 +1,6 @@
 :root{
     --kolore-nagusia: rgb(177, 121, 47);
+    --kolore-nagusia-hover: rgb(163, 110, 40);
 }
 
 /* LOGIN */
@@ -29,15 +30,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 30px;
 }
 
 .login-cont-logo img{
-    width: 80%;
+    width: 100%;
 }
 
 .login-cont-form{
     flex-grow: 3;
     padding: 30px;
+    padding-top: 0px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -101,12 +104,33 @@ body{
     font-family: Montserrat;
 }
 
+.contact-bt{
+    background-color: var(--kolore-nagusia);
+    width: 60px;
+    height: 60px;
+    border: none;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    border-radius: 30px;
+    color: white;
+    font-size: 30px;
+}
+
+.contact-bt:hover{
+    background-color: var(--kolore-nagusia-hover);
+}
+
 header{
     display: flex;
     flex-direction: row;
     height: 10vh;
     align-items: center;
     justify-content: stretch;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: white;
 }
 
 .header-left{
@@ -212,12 +236,32 @@ main{
     display: flex;
     flex-direction: column;
     height: calc(90vh - 24vw);
-    background-image: url(../resources/fondo_pilota.png);
     background-repeat: no-repeat;
     background-size: 80%;
     background-position: top right;
     padding: 12vw;
 }
+
+.main-sarrera.hasiera{
+    background-image: url(../resources/fondo_pilota.png);
+}
+
+.main-sarrera.norgara{
+    background-image: url(../resources/norgara.jpg);
+}
+
+.main-sarrera.historia{
+    background-size: cover;
+    background-image: url(../resources/historia.jpg);
+}
+
+.main-sarrera.historia .main-sarrera-h1{
+    color: white;
+}
+.main-sarrera.historia .main-sarrera-desc{
+    color: white;
+}
+
 
 .main-sarrera-h1{
     font-size: 4vw;
@@ -234,9 +278,17 @@ main{
     padding-top: 0px;
 }
 
+.main-art-sec{
+    margin-top: 120px;
+}
+
 .sec-title{
     margin-top: 60px;
     font-weight: normal;
+}
+
+.sec-desc{
+    font-size: 18px;
 }
 
 .albistea-txart-kont{
