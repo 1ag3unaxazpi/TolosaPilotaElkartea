@@ -17,9 +17,10 @@
     $email=$_POST['email'];
     $izena=$_POST['izena'];
     $gaia=$_POST['gaia'];
-    $mezua=$_POST['mezua']; 
+    $mezua=$_POST['mezua'];
+    $headers = "From: webmaster@example.com";
 
-    mail("1ag3.unaxazpi@tolosaldealh.eus",$izena . " - " . $gaia,$mezua);
+    mail("1ag3.unaxazpi@tolosaldealh.eus",$izena . " - " . $gaia,$mezua, $headers);
 
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>
