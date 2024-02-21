@@ -20,7 +20,7 @@
     $mezua=$_POST['mezua'];
     $headers = "From: " . $izena . " " . $email;
 
-    mail("1ag3.unaxazpi@tolosaldealh.eus",$izena . " - " . $gaia,$mezua, $headers);
+    mail("1ag3.unaxazpi@tolosaldealh.eus", $gaia,$mezua, $headers);
 
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>
