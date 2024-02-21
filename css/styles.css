@@ -510,6 +510,28 @@ main{
     color: white;
 }
 
+.erab-cont{
+    margin: 15vw;
+    margin-top: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.erab-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: stretch;
+}
+
+.erab-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+}
+
 footer{
     height: 15vh;
     /* background-image: linear-gradient(rgb(255, 255, 255), rgb(70, 70, 70)); */

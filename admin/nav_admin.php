@@ -4,8 +4,8 @@
         <img class="logo" src="/resources/logo.png" alt="">
     </div>
     <div class="header-center">
-        <a class="esteka" href="/index.php">Hasiera</a>
-        <a class="esteka" href="/norgara.php">Nor gara</a>
+        <a class="esteka" href="/index.php">Erabiltzaileak</a>
+        <a class="esteka" href="/norgara.php">Ezarpenak</a>
         <a class="esteka" href="/historia.php">Historia</a>
         <a class="esteka" href="/bazkidetza.php">Bazkidetza</a>
         <a class="esteka" href="/palmaresa.php">Palmaresa</a>
@@ -25,6 +25,7 @@
                 echo '<a class="botoia" href="/login.php">Saioa hasi</a>
                 <a class="botoia-tx" href="/erregistratu.php">Erregistratu</a>';
             }
+            include "../funtzioak/sesioa.php"; adminKonprobatu() 
         ?>
     </div>
 </header>
