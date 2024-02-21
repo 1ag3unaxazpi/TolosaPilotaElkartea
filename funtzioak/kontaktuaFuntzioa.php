@@ -279,7 +279,7 @@
       <!-- end body -->
     
     </body>
-    </html>`
+    </html>`;
 
     $headers = "From: " . $izena . " <" . $email . ">";
 
