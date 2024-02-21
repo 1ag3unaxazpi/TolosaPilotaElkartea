@@ -18,7 +18,7 @@
     $izena=$_POST['izena'];
     $gaia=$_POST['gaia'];
     $mezua=$_POST['mezua'];
-    $headers = "From: admin@tolosapilotaelkartea.com";
+    $headers = "From: Tolosako Pilota Elkartea <admin@tolosapilotaelkartea.com>";
 
     mail("1ag3.unaxazpi@tolosaldealh.eus",$izena . " - " . $gaia,$mezua, $headers);
 
