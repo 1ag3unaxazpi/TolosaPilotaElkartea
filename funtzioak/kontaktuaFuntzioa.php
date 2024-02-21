@@ -19,7 +19,7 @@
     $gaia=$_POST['gaia'];
     $mezua=$_POST['mezua']; 
 
-    mail("1ag3.unaxazpi@tolosaldealh.eus",$izena . " - " . $gaia,$mezua);
+    mail("root@tolosapilotaelkartea.com",$izena . " - " . $gaia,$mezua);
 
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>
