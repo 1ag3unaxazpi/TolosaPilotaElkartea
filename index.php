@@ -11,30 +11,9 @@
     <title>Tolosako Pilota Elkartea</title>
 </head>
 <body>
-    <a href="kontaktua.html" class="contact-bt">?</a>
-    <header>
-        <div class="header-left">
-            <img class="logo" src="resources/logo.png" alt="">
-        </div>
-        <div class="header-center">
-            <a class="esteka" href="index.html">Hasiera</a>
-            <a class="esteka" href="norgara.html">Nor gara</a>
-            <a class="esteka" href="historia.html">Historia</a>
-            <a class="esteka" href="bazkidetza.html">Bazkidetza</a>
-            <a class="esteka" href="palmaresa.html">Palmaresa</a>
-        </div>
-        <div class="header-right">
-            <!-- <div class="user-cont">
-                <img src="resources/user-icon-argia.png" width="40px" alt="">
-                <span>Unax Azpirotz</span>
-            </div> -->
-
-            
-            <a class="botoia" href="login.html">Saioa hasi</a>
-            <a class="botoia-tx" href="erregistratu.html">Erregistratu</a>
-            
-        </div>
-    </header>
+    <?php
+        include "nav.php";
+    ?>
     <main>
         <div class="main-sarrera hasiera">
             <div class="main-sarrera-h1">
@@ -175,8 +154,8 @@
             </div>
         </div>
     </main>
-    <footer>
-        
-    </footer>
+    <?php
+        include "footer.php";
+    ?>
 </body>
 </html>
