@@ -18,7 +18,7 @@
     $izena=$_POST['izena'];
     $gaia=$_POST['gaia'];
     $mezua=$_POST['mezua'];
-    $headers = "From: " . $izena . " " . $email;
+    $headers = "From: " . $izena . " <" . $email . ">";
 
     mail("1ag3.unaxazpi@tolosaldealh.eus", $gaia,$mezua, $headers);
 
