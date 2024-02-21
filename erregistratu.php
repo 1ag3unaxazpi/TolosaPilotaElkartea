@@ -1,50 +1,74 @@
-<!DOCTYPE html>
-<html lang="eus">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>Erregistratu</title>
-</head>
+<?php include "head.php"; ?>
 <body>
     <div class="login-main">
         <div class="login-cont">
             <div class="login-cont-logo">
                 <img src="resources/logo.png" alt="">
             </div>
-            <div class="login-cont-form">
+            <form beforesumbit="" id="form_erregistratu" method="POST" action="/funtzioak/erregistratuFuntzioa.php" class="login-cont-form">
                 <div class="login-cont-form-user">
-                    <input type="text" name="" placeholder="Izena" id="">
+                    <input type="text" name="izena" placeholder="Izena" id="izena">
                 </div>
                 <div class="login-cont-form-user">
-                    <input type="text" name="" placeholder="Abizena" id="">
+                    <input type="text" name="abizena" placeholder="Abizena" id="abizena">
                 </div>
                 <div class="login-cont-form-user">
-                    <input type="email" name="" placeholder="Email-a" id="">
+                    <input type="email" name="email" placeholder="Email-a" id="email">
                 </div>
                 <div class="login-cont-form-user">
-                    <input type="email" name="" placeholder="Helbideaa" id="">
+                    <input type="email" name="helbidea" placeholder="Helbidea (Aukerakoa)" id="helbidea">
                 </div>
                 <div class="login-cont-form-user">
-                    <input type="email" name="" placeholder="Telefono zenbakia" id="">
+                    <input type="email" name="tlf" placeholder="Telefono zenbakia (Aukerakoa)" id="tlf">
                 </div>
                 <div class="login-cont-form-user">
-                    <input type="text" name="" placeholder="Erabiltzailea" id="">
+                    <input type="text" name="username" placeholder="Erabiltzailea" id="username">
                 </div>
                 <div class="login-cont-form-password">
-                    <input type="password" placeholder="Pasahitza" name="" id="">
+                    <input type="password" placeholder="Pasahitza" name="password" id="password">
                 </div>
                 <div class="login-cont-form-password">
-                    <input type="password" placeholder="Pasahitza errepikatu" name="" id="">
+                    <input type="password" placeholder="Pasahitza errepikatu" name="password_er" id="password_er">
                 </div>
-            </div>
+            </form>
             <div class="login-cont-footer">
-                <button class="login-cont-footer-bt">Erabiltzailea sortu</button>
+                <button form="form_erregistratu" type="sumbit" class="login-cont-footer-bt" id="erregistratu-bt" disabled>Erabiltzailea sortu</button>
             </div>
         </div>
     </div>
 </body>
 </html>
+<script>
+    
+        izena = document.getElementById("izena");
+        abizena = document.getElementById("abizena");
+        email = document.getElementById("email");
+        helbidea = document.getElementById("helbidea");
+        tlf = document.getElementById("tlf");
+        username = document.getElementById("username");
+        password = document.getElementById("password");
+        password_er = document.getElementById("password_er");
+
+
+        password_er.addEventListener("keyup", pasahitzaKonprobatu);
+        password.addEventListener("keyup", pasahitzaKonprobatu);
+
+        function pasahitzaKonprobatu(){
+            console.log("BAI")
+            if (password.value != password_er.value){
+                password.style.borderColor="red";
+                password.style.color="red";
+                password_er.style.borderColor="red";
+                password_er.style.color="red";
+            }
+            else{
+                password.style.borderColor="black";
+                password.style.color="black";
+                password_er.style.borderColor="black";
+                password_er.style.color="black";
+                document.getElementById("erregistratu-bt").disabled=false
+            }
+        }
+        
+    
+</script>

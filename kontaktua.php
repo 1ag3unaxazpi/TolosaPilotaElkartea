@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="eus">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>Tolosako Pilota Elkartea - Kontaktua</title>
-</head>
+<?php include "head.php"; ?>
 <body>
     <?php
         include "nav.php";
@@ -18,8 +8,8 @@
             <div class="kontaktua-cont">
                 <h1 class="sec-title" style="margin-top: 0px;"><b>Ezagutu</b> gaitezen elkar</h1>
                 <form action="">
-                    <input placeholder="Email-a" type="email">
-                    <input placeholder="Izena" type="text">
+                    <input placeholder="Email-a" value="<?php if(isset($_SESSION['email'])){echo $_SESSION['email'];};?>" type="email">
+                    <input placeholder="Izena" value="<?php if(isset($_SESSION['izena']) && isset($_SESSION['abizena'])){echo  $_SESSION['izena'] . ' ' . $_SESSION['abizena'];};?>" type="text">
                     <input placeholder="Gaia" type="text">
                     <textarea placeholder="Mezua" name="" id="" cols="30" rows="10"></textarea>
                     <div class="kontaktua-cont-footer">

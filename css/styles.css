@@ -235,6 +235,26 @@ header{
     background-color: rgb(241, 241, 241);
 }
 
+.logout-bt{
+    text-decoration: none;
+    color: rgb(83, 83, 83);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 20px;
+    padding: 10px;
+    padding-inline: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 30px;
+    font-weight: 200;
+}
+
+.logout-bt:hover{
+    background-color: rgb(235, 235, 235);
+}
+
 main{
     flex-grow: 1;
 }

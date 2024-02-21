@@ -11,14 +11,20 @@
         <a class="esteka" href="palmaresa.php">Palmaresa</a>
     </div>
     <div class="header-right">
-        <!-- <div class="user-cont">
-            <img src="resources/user-icon-argia.png" width="40px" alt="">
-            <span>Unax Azpirotz</span>
-        </div> -->
-
-        
-        <a class="botoia" href="login.php">Saioa hasi</a>
-        <a class="botoia-tx" href="erregistratu.php">Erregistratu</a>
-        
+        <?php
+            session_start();
+            if (isset($_SESSION['username'])){
+                echo '<div class="user-cont">
+                <img src="resources/user-icon-argia.png" width="40px" alt="">
+                <span>' . $_SESSION['izena'] . ' ' . $_SESSION['abizena'] . '</span>
+                </div>
+                <a class="logout-bt" href="/funtzioak/logout.php"><i class="bi bi-box-arrow-right"></i></a>
+                ';
+            }
+            else{
+                echo '<a class="botoia" href="login.php">Saioa hasi</a>
+                <a class="botoia-tx" href="erregistratu.php">Erregistratu</a>';
+            }
+        ?>
     </div>
 </header>
