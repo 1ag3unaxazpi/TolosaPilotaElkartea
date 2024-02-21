@@ -20,6 +20,7 @@
     $_SESSION['abizena']=$abizena;
     $_SESSION['email']=$email;
     $_SESSION['tlf']=$tlf;
+    $_SESSION['admin']=0;
 
     header("location: ../index.php");
 

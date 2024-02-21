@@ -7,13 +7,13 @@
         <div class="main-art">
             <div class="kontaktua-cont">
                 <h1 class="sec-title" style="margin-top: 0px;"><b>Ezagutu</b> gaitezen elkar</h1>
-                <form action="">
-                    <input placeholder="Email-a" value="<?php if(isset($_SESSION['email'])){echo $_SESSION['email'];};?>" type="email">
-                    <input placeholder="Izena" value="<?php if(isset($_SESSION['izena']) && isset($_SESSION['abizena'])){echo  $_SESSION['izena'] . ' ' . $_SESSION['abizena'];};?>" type="text">
-                    <input placeholder="Gaia" type="text">
-                    <textarea placeholder="Mezua" name="" id="" cols="30" rows="10"></textarea>
+                <form action="/funtzioak/kontaktuaFuntzioa.php" method="POST">
+                    <input placeholder="Email-a" name="email" value="<?php if(isset($_SESSION['email'])){echo $_SESSION['email'];};?>" type="email">
+                    <input placeholder="Izena" name="izena" value="<?php if(isset($_SESSION['izena']) && isset($_SESSION['abizena'])){echo  $_SESSION['izena'] . ' ' . $_SESSION['abizena'];};?>" type="text">
+                    <input placeholder="Gaia" name="gaia" type="text">
+                    <textarea placeholder="Mezua" name="mezua" id="mezua" cols="30" rows="10"></textarea>
                     <div class="kontaktua-cont-footer">
-                        <button class="kontaktua-bt">Bidali</button>
+                        <button type="sumbit" class="kontaktua-bt">Bidali</button>
                     </div>
                 </form>
             </div>

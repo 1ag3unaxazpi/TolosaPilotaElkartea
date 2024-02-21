@@ -24,6 +24,7 @@
         $_SESSION['abizena']=$abizena;
         $_SESSION['email']=$email;
         $_SESSION['tlf']=$tlf;
+        $_SESSION['admin']=$administratzailea;
 
         header("location: ../index.php");
     }
