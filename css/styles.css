@@ -225,6 +225,8 @@ header{
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s;
+    text-decoration: none;
+    color: rgb(61, 61, 61);
 }
 
 .user-cont span{
@@ -512,7 +514,7 @@ main{
 
 .erab-cont{
     margin: 15vw;
-    margin-top: 5vw;
+    margin-top: 3vw;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -523,6 +525,7 @@ main{
     flex-direction: row;
     justify-content: stretch;
     align-items: stretch;
+    margin-top: 3vh;
 }
 
 .erab-column{
@@ -530,6 +533,31 @@ main{
     flex-direction: column;
     justify-content: stretch;
     align-items: stretch;
+    flex-grow: 1;
+}
+
+.erab-row-ind{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 2vw;
+}
+
+.erab-cont input[type="text"]{
+    border: none;
+    border-bottom: 1px solid rgb(206, 206, 206);
+    color: rgb(41, 41, 41);
+    background: none;
+    height: 50px;
+    width: 100%;
+    font-family: Montserrat;
+    margin-bottom: 20px;
+}
+
+.erab-cont input[type="text"]:focus{
+    outline: none;
 }
 
 footer{

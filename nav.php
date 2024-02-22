@@ -14,10 +14,10 @@
         <?php
             session_start();
             if (isset($_SESSION['username'])){
-                echo '<div class="user-cont">
+                echo '<a href="erabiltzailea.php" class="user-cont">
                 <img src="/resources/user-icon-argia.png" width="40px" alt="">
                 <span>' . $_SESSION['izena'] . ' ' . $_SESSION['abizena'] . '</span>
-                </div>
+                </a>
                 <a class="logout-bt" href="/funtzioak/logout.php"><i class="bi bi-box-arrow-right"></i></a>
                 ';
             }
