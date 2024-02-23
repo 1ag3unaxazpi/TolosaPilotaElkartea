@@ -107,11 +107,154 @@ function sortuEnpresa($nif, $izena, $telefonoa, $helbidea, $email){
  */
 function sortuPelotaria($nan, $izena, $abizenak, $pisua, $altuera, $jaiotze_data, $estrenaldi_data){
     $connection = connection();
-    $sql="INSERT INTO `pelotaria` (`nan`, `izena`, `abizenak`, `pisua`, `altuera`, `jaiotze_data`, `estrinaldi_data`) VALUES ('$nan', '$izena', '$abizenak', '$pisua', '$altuera', '$jaiotze_data', '$estrenaldi_data');";
+    $sql="INSERT INTO `pelotaria` (`nan`, `izena`, `abizenak`, `pisua`, `altuera`, `jaiotze_data`, `estreinaldi_data`) VALUES ('$nan', '$izena', '$abizenak', '$pisua', '$altuera', '$jaiotze_data', '$estrenaldi_data');";
     $query = mysqli_query($connection, $sql);
 }
 
+/**
+ * Partidu bat sortzen du datu-basean.
+ *
+ * @param mixed $pelotaria_nan Pelotariaren NAN-a.
+ * @param mixed $kolorea Pelotariaren kolorea.
+ * @param mixed $multzoa Partiduaren multzoa.
+ * @param mixed $mota Partiduaren mota.
+ * @param mixed $data Partiduaren data.
+ * @param mixed $hasiera_ordua Partiduaren hasiera ordua.
+ * @param mixed $bukaera_ordua Partiduaren bukaera ordua.
+ * @param mixed $jaurdunldia Partiduaren jaurdunaldia.
+ * @param mixed $oharra Partiduaren oharra.
+ * @param mixed $lehiaketa_kode Lehiaketaren kodea.
+ * @return void
+ */
+function sortuPartidua($pelotaria_nan, $kolorea, $multzoa, $mota, $data, $hasiera_ordua, $bukaera_ordua, $jaurdunldia, $oharra, $lehiaketa_kode){
+    $connection = connection();
+    $sql="INSERT INTO `partidua` (`mota`, `data`, `hasiera_ordua`, `bukaera_ordua`, `jausdunaldia`, `oharra`, `lehiaketa_kode`) VALUES ('$mota', '$data', '$hasiera_ordua', '$bukaera_ordua', '$jausdunaldia', '$oharra', '$lehiaketa_kode');";
+    $query = mysqli_query($connection, $sql);
 
+    $sql="INSERT INTO `jolastu` (`pelotaria_nan`, `kolorea`, `multzoa`) VALUES ('$pelotaria_nan', '$kolorea', '$multzoa');";
+    $query = mysqli_query($connection, $sql);
+}
 
+/**
+ * Albistea sortzen du datu-basean.
+ *
+ * @param mixed $titulua Albistearen titulua.
+ * @param mixed $deskripzioa Albistearen deskripzioa.
+ * @param mixed $gorputza Albistearen gorputza.
+ * @param mixed $irudia Albistearen irudia.
+ * @param mixed $data Albistearen data.
+ * @param mixed $ordua Albistearen ordua.
+ * @param mixed $egilea Albistearen egilea.
+ * @param mixed $mota Albistearen mota.
+ * @return void
+ */
+function sortuAlbistea($titulua, $deskripzioa, $gorputza, $irudia, $data, $ordua, $egilea, $mota){
+    $connection = connection();
+    $sql="INSERT INTO `albistea` (`titulua`, `deskripzioa`, `gorputza`, `data`, `ordua`, `egilea`, `mota`) VALUES ('$titulua', '$deskripzioa', '$gorputza', '$data', '$ordua', '$egilea', '$mota');";
+    $query = mysqli_query($connection, $sql);
+}
+
+/**
+ * Lehiaketaren albistea sortzen du datu-basean.
+ *
+ * @param mixed $lehiaketa_kodea Lehiaketaren kodea.
+ * @param mixed $titulua Albistearen titulua.
+ * @param mixed $deskripzioa Albistearen deskripzioa.
+ * @param mixed $gorputza Albistearen gorputza.
+ * @param mixed $irudia Albistearen irudia.
+ * @param mixed $data Albistearen data.
+ * @param mixed $ordua Albistearen ordua.
+ * @param mixed $egilea Albistearen egilea.
+ * @param mixed $mota Albistearen mota.
+ * @return void
+ */
+function sortuAlbisteaLehiaketa($lehiaketa_kodea, $titulua, $deskripzioa, $gorputza, $irudia, $data, $ordua, $egilea, $mota){
+    sortuAlbistea($titulua, $deskripzioa, $gorputza, $irudia, $data, $ordua, $egilea, $mota);
+    $connection = connection();
+    $sql="SELECT  `kodea` FROM `tolosa_pilota_elkartea`.`albistea` ORDER BY kodea DESC LIMIT 1;";
+    $query = mysqli_query($connection, $sql);
+
+    $query = mysqli_query($connection, $sql);
+    if(mysqli_num_rows($query)>0){
+        while($row = mysqli_fetch_array($query)){
+            $albistea_kodea=$row["kodea"];
+        };
+    }
+
+    $sql="INSERT INTO `albistea_lehiaketa` (`albistea_kodea`, `lehiaketa_kodea`) VALUES ('$albistea_kodea', '$lehiaketa_kodea');";
+    $query = mysqli_query($connection, $sql);
+}
+
+/**
+ * @param mixed $partidua_kodea
+ * @param mixed $titulua
+ * @param mixed $deskripzioa
+ * @param mixed $gorputza
+ * @param mixed $irudia
+ * @param mixed $data
+ * @param mixed $ordua
+ * @param mixed $egilea
+ * @param mixed $mota
+ * 
+ * @return [type]
+ */
+function sortuAlbisteaPartidua($partidua_kodea, $titulua, $deskripzioa, $gorputza, $irudia, $data, $ordua, $egilea, $mota){
+    sortuAlbistea($titulua, $deskripzioa, $gorputza, $irudia, $data, $ordua, $egilea, $mota);
+    $connection = connection();
+    $sql="SELECT  `kodea` FROM `tolosa_pilota_elkartea`.`albistea` ORDER BY kodea DESC LIMIT 1;";
+    $query = mysqli_query($connection, $sql);
+
+    $query = mysqli_query($connection, $sql);
+    if(mysqli_num_rows($query)>0){
+        while($row = mysqli_fetch_array($query)){
+            $albistea_kodea=$row["kodea"];
+        };
+    }
+
+    $sql="INSERT INTO `albistea_partidua` (`albistea_kodea`, `partidua_kodea`) VALUES ('$albistea_kodea', '$partidua_kodea');";
+    $query = mysqli_query($connection, $sql);
+}
+
+/**
+ * @param mixed $pelotaria_kodea
+ * @param mixed $titulua
+ * @param mixed $deskripzioa
+ * @param mixed $gorputza
+ * @param mixed $irudia
+ * @param mixed $data
+ * @param mixed $ordua
+ * @param mixed $egilea
+ * @param mixed $mota
+ * 
+ * @return [type]
+ */
+function sortuAlbisteaPelotaria($pelotaria_kodea, $titulua, $deskripzioa, $gorputza, $irudia, $data, $ordua, $egilea, $mota){
+    sortuAlbistea($titulua, $deskripzioa, $gorputza, $irudia, $data, $ordua, $egilea, $mota);
+    $connection = connection();
+    $sql="SELECT  `kodea` FROM `tolosa_pilota_elkartea`.`albistea` ORDER BY kodea DESC LIMIT 1;";
+    $query = mysqli_query($connection, $sql);
+
+    $query = mysqli_query($connection, $sql);
+    if(mysqli_num_rows($query)>0){
+        while($row = mysqli_fetch_array($query)){
+            $albistea_kodea=$row["kodea"];
+        };
+    }
+
+    $sql="INSERT INTO `albistea_pelotaria` (`albistea_kodea`, `pelotaria_kodea`) VALUES ('$albistea_kodea', '$pelotaria_kodea');";
+    $query = mysqli_query($connection, $sql);
+}
+
+/**
+ * @param mixed $erabiltzailea_username
+ * @param mixed $lehiaketa_kodea
+ * 
+ * @return [type]
+ */
+function sortuHarpidetu($erabiltzailea_username, $lehiaketa_kodea){
+    $connection = connection();
+    $sql="INSERT INTO `harpidetu` (`erabiltzailea_username`, `lehiaketa_kodea`) VALUES ('$erabiltzailea_username', '$lehiaketa_kodea');";
+    $query = mysqli_query($connection, $sql);
+}
 
 ?>

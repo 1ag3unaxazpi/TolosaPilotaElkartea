@@ -14,6 +14,9 @@
         <?php
             session_start();
             if (isset($_SESSION['username'])){
+                if($_SESSION['admin']){
+                    echo '<a class="logout-bt" href="/admin"><i class="bi bi-gear"></i></a>';
+                }
                 echo '<a href="erabiltzailea.php" class="user-cont">
                 <img src="/resources/user-icon-argia.png" width="40px" alt="">
                 <span>' . $_SESSION['izena'] . ' ' . $_SESSION['abizena'] . '</span>

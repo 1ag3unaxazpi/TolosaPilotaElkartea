@@ -6,32 +6,39 @@
     <main>
         <div class="main-sarrera norgara">
             <div class="main-sarrera-h1">
-                <b>Nor</b> gara?
+                <b>Palmaresa</b>
             </div>
             <div class="main-sarrera-desc">
-                Tolosako pilota kirol elkartean sartu zareten modukoak gara. Hemen, gure burua, gure kideak, eta gure helburuak aurki dezakezu
+                Gure pelota kirol elkartea izateak ekarri duen arrakastaren eta sarien historia handia daukagu. Hemen, gure palmaresa, lortutako irabazien, lehiaketen, eta emaitzen berri izango duzue.
             </div>
         </div>
         <div class="main-art">
             <div class="main-art-sec">
-                <h2 class="sec-title">Gure <b>Kirol Elkartea</b></h2>
+                <h2 class="sec-title">Azken <b>Irabaziak</b></h2>
                 <div class="sec-desc">
-                    Gure elkartea ez da inondik sortua; da, baina, gure herriko sinesmenak, kultura, eta tradizioak bildu ditu. 1960. urtean jaio zen, Tolosako kaleetan eta frontoietan, herri honetan pelota kirola sustatzeko ardura hartuz. Gure taldea oso antzinatik ere lan egiten ari da, eta pelota kirola Tolosan bizi dugun errealitatearen hainbat parte osatzen dugu.
-                    
+                    Azken urteetan, gure taldea hainbat lehiaketetan parte hartu eta irabaziak lortu ditu. Euren talentua eta ahalegin handiak emaitzak ekartzen ditu, eta horrek gure pelota kirol elkartea zoriontsu eta arrakastatsu bihurtzen du. Azken emaitzak eta txapelketetan lortutako lehiaketa irabaziak hemen aurkituko dituzu.
                 </div>
-                <img src="resources/elkartea.jpg" width="100%" style="margin-top: 60px;" alt="">
+                <img src="resources/pilotak.jpg" width="100%" style="margin-top: 60px;" alt="">
             </div>
             <div class="main-art-sec">
-                <h2 class="sec-title">Gure <b>kideak</b></h2>
+                <h2 class="sec-title"><b>Historikoa</b></h2>
                 <div class="sec-desc">
-                    Gure elkarteko kideak oso anitzak eta aniztasun handia dute. Haien artean jokalari gazteak, betiko kideak, entrenatzaileak eta herriko kirola maite dutenak aurki daitezke. Guztiek elkartean bat egiten dute, denak helburu berdinekin: gure kultura eta pelota kirola sustatzea. Hori dela eta, hemen aurkituko duzu lagun onak, ikasle zintzoak, eta gure herriaren kirola maite duten guztiak.
+                    Gure historia osoa erakusten duen palmaresa daukagu. Mende batzuetan zehar, gure taldeak hainbat sari eta lehiaketetan lortutako irabaziak azpimarratzen ditu. Herri osoan sustatutako lehiaketetan parte hartzea eta gure taldearen zortzirenetan parte hartzea, gure kirol tradizioaren gorakada osoan eragina izan du.
                 </div>
             </div>
             <img src="resources/partaideak.jpg" width="100%" style="margin-top: 60px;" alt="">
             <div class="main-art-sec">
-                <h2 class="sec-title">Gure <b>helburuak</b></h2>
+                <h2 class="sec-title"><b>Sariak</b> eta <b>Iritzia</b></h2>
                 <div class="sec-desc">
-                    Gure helburu nagusia Tolosan pelota kirola bultzatzea eta sendotzea da. Ez dugu soilik kirol hau praktikatzen, baizik eta gure herria eta herriaren identitatea indartzen. Talde lanetan parte hartu, lagunak aurki, eta herriko kirol tradizioa bultzatu nahi dugu. Gure helburua da Tolosan pelota kirola bizirik mantentzea, bai orain eta etorkizunean ere.
+                    Gure taldeak hainbat kategorietan lortutako sariak ere daukagu. Jokalari gazteak, esperientziadunak, eta entrenatzaileak ere, guztiak elkartzen dute, eta elkarrekin lortutako sariak parte hartzen duten guztiak ditugu. Sari hauek ez dira bakarrik irabazitako lehiaketen fruitua, baizik eta talde osoaren lanaren, elkartasunaren, eta zaletasunaren ondorioa ere.
+                </div>
+            </div>
+            <div class="main-art-sec">
+                <h2 class="sec-title"><b>Lehiaketa</b> eta <b>Erronkak</b></h2>
+                <div class="sec-desc">
+                Gure palmaresa, bidezko lanaren, taldeko elkartasunaren eta kirol zaletasunaren emaitza da. Taldeak parte hartzen duen hainbat lehiaketa eta erronka ere biltzen dira hemen. Bakoitzak bere ahalegin eta ardura hartzen du, eta horrek taldearen lortuko diren sari eta arrakastaren azken helburuak bultzatzen ditu.
+                <br><br>
+                Eskerrik asko zure babesa eta laguntasunagatik. Jarraitu dezagun elkartean, erronka berriak hartuz eta irabazten jarraituz!
                 </div>
             </div>
         </div>

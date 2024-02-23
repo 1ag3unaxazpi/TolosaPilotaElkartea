@@ -11,3 +11,4 @@
     <link rel="stylesheet" href="/bootstrap/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
     <title>Tolosako Pilota Elkartea - Administrazioa</title>
 </head>
+<?php include "../funtzioak/db.php"; ?>
