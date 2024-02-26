@@ -13,6 +13,9 @@
                     <input type="password" placeholder="Pasahitza" name="password_form" id="password_form">
                 </div>
             </div>
+            <?php if(isset($errorea)){
+                echo $errorea;
+            } ?>
             <div class="login-cont-footer">
                 <button class="login-cont-footer-bt" type="sumbit">Saioa hasi</button>
             </div>
