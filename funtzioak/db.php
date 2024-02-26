@@ -264,7 +264,7 @@ function emaitzaGuztiak(){
 }
 function getAlbisteak(){
     $connection = connection();
-    $sql="SELECT `titulua`, `deskripzioa`, `irudia` FROM albistea ORDER BY albistea.data"
+    $sql="SELECT `titulua`, `deskripzioa`, `irudia` FROM albistea ORDER BY albistea.data desc LIMIT 4";
     $query = mysqli_query($connection, $sql);
 
     return $query;
@@ -278,21 +278,22 @@ function ateraAlbistea() {
             $albistea_deskripzioa=$row["deskripzioa"];
             $albistea_irudia=$row["irudia"];
         };
+        echo '
+        <div class="albistea-txart">
+            <div class="albistea-txart-img">
+                <img src="data:image/jpeg;base64,'. $albistea_irudia .'" alt="">
+            </div>
+            <div class="albistea-txart-header">
+                '. $albistea_titulua .'
+            </div>
+            <div class="albistea-txart-desc">
+                '. $albistea_deskripzioa .'
+            </div>
+        </div>
+        ';
     }
 
-    echo "
-    <div class="albistea-txart">
-        <div class="albistea-txart-img">
-            <img src="data:image/jpeg;base64,$albistea_irudia" alt="">
-        </div>
-        <div class="albistea-txart-header">
-            $albistea_titulua
-        </div>
-        <div class="albistea-txart-desc">
-            $albistea_deskripzioa
-        </div>
-    </div>
-    ";
+    
 }
 
 ?>
