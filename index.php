@@ -62,6 +62,52 @@
             </div>
             <h2 class="sec-title">Azken <b>emaitzak</b></h2>
             <div class="emaitza-txart-kont">
+                <?php
+                    $connection = connection();
+                    $sql="SELECT kodea FROM partidua;";
+                    $query = mysqli_query($connection, $sql);
+
+                    
+
+                    if(mysqli_num_rows($query)>0){
+                        while($row = mysqli_fetch_array($query)){
+                            $urdinak="";
+                            $gorriak="";
+                            $partiduKodea=$row["kodea"];
+
+                            $sql2="SELECT  `kodea`, `pelotaria`.`izena`,`pelotaria`.`abizenak`,  `hasiera_ordua`,  `bukaera_ordua`,  `jardunaldia`, `lehiaketa_kodea`
+                            FROM `tolosa_pilota_elkartea`.`partidua` 
+                            INNER JOIN jolastu ON partidua.kodea=jolastu.partidua_kodea
+                            INNER JOIN pelotaria ON jolastu.pelotaria_nan = pelotaria.nan
+                            WHERE kolorea='urdina' AND partidua.kodea='$partiduKodea';";
+                            $query2 = mysqli_query($connection, $sql2);
+
+                            if(mysqli_num_rows($query2)>0){
+                                while($row = mysqli_fetch_array($query2)){
+                                    $izena=$row["izena"] . " " . $row['abizenak'];
+                                    $urdinak = $urdinak . " " . $izena;
+                                };
+                            }
+
+                            $sql2="SELECT  `kodea`, `pelotaria`.`izena`,`pelotaria`.`abizenak`,  `hasiera_ordua`,  `bukaera_ordua`,  `jardunaldia`, `lehiaketa_kodea`
+                            FROM `tolosa_pilota_elkartea`.`partidua` 
+                            INNER JOIN jolastu ON partidua.kodea=jolastu.partidua_kodea
+                            INNER JOIN pelotaria ON jolastu.pelotaria_nan = pelotaria.nan
+                            WHERE kolorea='gorria' AND partidua.kodea='$partiduKodea';";
+                            $query2 = mysqli_query($connection, $sql2);
+
+                            if(mysqli_num_rows($query2)>0){
+                                while($row = mysqli_fetch_array($query2)){
+                                    $izena=$row["izena"] . " " . $row['abizenak'];
+                                    $gorriak = $gorriak . " " . $izena;
+                                };
+                            }
+
+                            echo $urdinak . " - " . $gorriak;
+                        };
+                    }
+                    
+                ?>
                 <div class="emaitza-txart">
                     <div class="emaitza-txart-left">
                         <div class="emaitza-txart-left-hilabetea">

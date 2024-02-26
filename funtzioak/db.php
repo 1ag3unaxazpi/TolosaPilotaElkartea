@@ -257,4 +257,10 @@ function sortuHarpidetu($erabiltzailea_username, $lehiaketa_kodea){
     $query = mysqli_query($connection, $sql);
 }
 
+function emaitzaGuztiak(){
+    $connection = connection();
+    $sql="INSERT INTO `harpidetu` (`erabiltzailea_username`, `lehiaketa_kodea`) VALUES ('$erabiltzailea_username', '$lehiaketa_kodea');";
+    $query = mysqli_query($connection, $sql);
+}
+
 ?>

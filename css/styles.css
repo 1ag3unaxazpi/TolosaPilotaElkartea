@@ -560,6 +560,29 @@ main{
     outline: none;
 }
 
+
+
+/** ADMIN **/
+
+.admin-title-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    height: 90vh;
+}
+
+.admin-title{
+    text-align: center;
+    font-size: 30px;
+}
+
+
+
+/** FIN ADMIN **/
+
+
 footer{
     height: 15vh;
     /* background-image: linear-gradient(rgb(255, 255, 255), rgb(70, 70, 70)); */
