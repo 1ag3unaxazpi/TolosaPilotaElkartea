@@ -257,13 +257,11 @@ function sortuHarpidetu($erabiltzailea_username, $lehiaketa_kodea){
     $query = mysqli_query($connection, $sql);
 }
 
-<<<<<<< HEAD
 function emaitzaGuztiak(){
     $connection = connection();
     $sql="INSERT INTO `harpidetu` (`erabiltzailea_username`, `lehiaketa_kodea`) VALUES ('$erabiltzailea_username', '$lehiaketa_kodea');";
     $query = mysqli_query($connection, $sql);
 }
-=======
 function getAlbisteak(){
     $connection = connection();
     $sql="SELECT `titulua`, `deskripzioa`, `irudia` FROM albistea ORDER BY albistea.data"
@@ -295,7 +293,6 @@ function ateraAlbistea() {
         </div>
     </div>
     ";
->>>>>>> bbbe4015a15a7a7e37eff80c27b9e8a2656a33c0
 }
 
 ?>
