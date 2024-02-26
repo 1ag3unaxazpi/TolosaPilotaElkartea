@@ -28,4 +28,7 @@
 
         header("location: ../index.php");
     }
+    else{
+        header('location ../login.php?errorea="erabiltzale edo pasahitza okerra"');
+    }
 ?>
