@@ -15,50 +15,7 @@
         <div class="main-art">
             <h2 class="sec-title">Azken <b>berriak</b></h2>
             <div class="albistea-txart-kont">
-                <div class="albistea-txart">
-                    <div class="albistea-txart-img">
-                        <img src="resources/adib_pelota.jpg" alt="">
-                    </div>
-                    <div class="albistea-txart-header">
-                        Adibiderako albistea
-                    </div>
-                    <div class="albistea-txart-desc">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure expedita dicta minima adipisci corrupti quis mollitia repellendus rerum pariatur? Quae, consectetur officia maiores sequi veritatis exercitationem in eum nobis perferendis!
-                    </div>
-                </div>
-                <div class="albistea-txart">
-                    <div class="albistea-txart-img">
-                        <img src="resources/adib_pelota_2.jpg" alt="">
-                    </div>
-                    <div class="albistea-txart-header">
-                        Adibiderako albistea
-                    </div>
-                    <div class="albistea-txart-desc">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure expedita dicta minima adipisci corrupti quis mollitia repellendus rerum pariatur? Quae, consectetur officia maiores sequi veritatis exercitationem in eum nobis perferendis!
-                    </div>
-                </div>
-                <div class="albistea-txart">
-                    <div class="albistea-txart-img">
-                        <img src="resources/adib_pelota_3.jpg" alt="">
-                    </div>
-                    <div class="albistea-txart-header">
-                        Adibiderako albistea
-                    </div>
-                    <div class="albistea-txart-desc">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure expedita dicta minima adipisci corrupti quis mollitia repellendus rerum pariatur? Quae, consectetur officia maiores sequi veritatis exercitationem in eum nobis perferendis!
-                    </div>
-                </div>
-                <div class="albistea-txart">
-                    <div class="albistea-txart-img">
-                        <img src="resources/adib_pelota_4.jpg" alt="">
-                    </div>
-                    <div class="albistea-txart-header">
-                        Adibiderako albistea
-                    </div>
-                    <div class="albistea-txart-desc">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure expedita dicta minima adipisci corrupti quis mollitia repellendus rerum pariatur? Quae, consectetur officia maiores sequi veritatis exercitationem in eum nobis perferendis!
-                    </div>
-                </div>
+                <?php ateraAlbistea(); ?>
             </div>
             <h2 class="sec-title">Azken <b>emaitzak</b></h2>
             <div class="emaitza-txart-kont">
