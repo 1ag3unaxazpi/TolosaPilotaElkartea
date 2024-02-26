@@ -257,10 +257,44 @@ function sortuHarpidetu($erabiltzailea_username, $lehiaketa_kodea){
     $query = mysqli_query($connection, $sql);
 }
 
+<<<<<<< HEAD
 function emaitzaGuztiak(){
     $connection = connection();
     $sql="INSERT INTO `harpidetu` (`erabiltzailea_username`, `lehiaketa_kodea`) VALUES ('$erabiltzailea_username', '$lehiaketa_kodea');";
     $query = mysqli_query($connection, $sql);
+=======
+function getAlbisteak(){
+    $connection = connection();
+    $sql="SELECT `titulua`, `deskripzioa`, `irudia` FROM albistea ORDER BY albistea.data"
+    $query = mysqli_query($connection, $sql);
+
+    return $query;
+}
+
+function ateraAlbistea() {
+    $query = getAlbisteak();
+    if(mysqli_num_rows($query)>0){
+        while($row = mysqli_fetch_array($query)){
+            $albistea_titulua=$row["titulua"];
+            $albistea_deskripzioa=$row["deskripzioa"];
+            $albistea_irudia=$row["irudia"];
+        };
+    }
+
+    echo "
+    <div class="albistea-txart">
+        <div class="albistea-txart-img">
+            <img src="data:image/jpeg;base64,$albistea_irudia" alt="">
+        </div>
+        <div class="albistea-txart-header">
+            $albistea_titulua
+        </div>
+        <div class="albistea-txart-desc">
+            $albistea_deskripzioa
+        </div>
+    </div>
+    ";
+>>>>>>> bbbe4015a15a7a7e37eff80c27b9e8a2656a33c0
 }
 
 ?>
