@@ -120,4 +120,5 @@ ssh administrador@10.23.25.179
     bind-address            = 0.0.0.0
     mysqlx-bind-address     = 0.0.0.0
     ````
+
     
