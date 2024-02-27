@@ -364,10 +364,17 @@ main{
     font-size: 20px;
     font-weight: 600;
     padding: 10px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    max-lines: 2;
 }
 
 .albistea-txart-desc{
     padding: 10px;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
 }
 
 .emaitza-txart-kont{
