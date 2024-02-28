@@ -699,3 +699,18 @@ footer{
     /* background-image: linear-gradient(rgb(255, 255, 255), rgb(70, 70, 70)); */
 }
 
+
+@media only screen and (max-width: 600px) {
+    header{
+        flex-direction: column;
+    }
+
+    .albistea-txart-kont{
+        flex-direction: column;
+    }
+
+    .albistea-txart{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
