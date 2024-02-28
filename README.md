@@ -8,6 +8,7 @@
   - [Sare konfigurazioa](#sare-konfigurazioa)
   - [Apache HTTP Server instalazioa](#apache-http-server-instalazioa)
   - [MySQL Server instalazioa](#mysql-server-instalazioa)
+  - [Datu basearen segurtasun kopien konfigurazioa](#datu-basearen-segurtasun-kopien-konfigurazioa)
 
 
 ## Erabilitako materiala
@@ -33,9 +34,10 @@ Jarraitu beharreko urratsak:
 
 - Ireki Windows PowerShell aplikazioa administratzaile gisa
 - Terminalean lerro hau idatzi eta pasahitza sartu:
-```
-ssh administrador@10.23.25.179
-```
+
+    ```
+    ssh administrador@10.23.25.179
+    ```
 
 
 ## Sare konfigurazioa
@@ -43,9 +45,9 @@ ssh administrador@10.23.25.179
 - Konfigurazioa mota: Zubias
 - Sare-parametroak esleitzeko metodoa: DHCP
 
- ![alt text](github_irudiak/dhcp.png)
+    ![alt text](github_irudiak/dhcp.png)
 
-![alt text](github_irudiak/ip-address.png)
+    ![alt text](github_irudiak/ip-address.png)
 
 
 ## Apache HTTP Server instalazioa
@@ -104,13 +106,13 @@ ssh administrador@10.23.25.179
     ````
 - Zerbitzaria martxan jarri
 
-````
-systemctl start apache2
-````
+    ````
+    systemctl start apache2
+    ````
 
-````
-systemctl enable apache2
-````
+    ````
+    systemctl enable apache2
+    ````
 
 ## MySQL Server instalazioa
 
@@ -135,3 +137,49 @@ systemctl enable apache2
     systemctl enable mysql
     ````
 
+
+## Datu basearen segurtasun kopien konfigurazioa
+
+- rysnc aplikazioa instalatu
+
+    ```
+    sudo apt update
+    ```
+
+    ```
+    sudo apt update
+    ```
+
+- Sortu datu basearen segurtasun kopia gordetzeko karpeta
+
+    ```
+    mkdir database_backup
+    ```
+
+- Sortu segurtasun kopia konfiguratzeko script bat
+
+    ```
+    nano backup_script.sh
+    ```
+
+    Fitxategian, kopiatu nahi duzun datu-basearen helbidea eta kopia hori gorde nahi duzun direktorioa adierazi behar dituzu.
+
+    ![alt text](github_irudiak/backup_script.png)
+
+- Script-a exekutatzeko baimenak eman
+
+    ```
+    chmod +x backup_script.sh
+    ```
+
+- Ondorengo komandoa exekutatu programatutako atazak editatzeko:
+
+    ```
+    crontab -e
+    ```
+
+- Segurtasun-kopia gauez eta laneguna ez den egun batean egitea gomendatzen da.
+
+    Irudi honetan segurtasun-kopia igandean (azken 0) eginengo dela adierazten da, 23:00etan eta 0 minutuan (lehen 0).
+
+    ![alt text](github_irudiak/backup_crontab.png)
