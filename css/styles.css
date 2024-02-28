@@ -702,7 +702,32 @@ footer{
 
 @media only screen and (max-width: 600px) {
     header{
+        flex-direction: row;
+    }
+
+    .header-center{
         flex-direction: column;
+        align-self: flex-end;
+        position: absolute;
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        background-color: white;
+        align-items: center;
+        justify-content: center;
+        top: 0px;
+        left: 0px;
+        padding: 0px;
+        margin: 0px;
+        font-size: 10vw;
+    }
+
+    .header-left{
+        flex-grow: 1;
+    }
+
+    .user-cont span{
+        display: none;
     }
 
     .albistea-txart-kont{
@@ -712,5 +737,32 @@ footer{
     .albistea-txart{
         width: 100%;
         margin-bottom: 10px;
+    }
+
+    .emaitza-txart{
+        flex-direction: column;
+    }
+
+    .emaitza-txart-center-pilotariak{
+        font-size: 20px;
+        font-weight: 400;
+    }
+    
+    .emaitza-txart-center-lehiaketa{
+        font-size: 15px;
+    }
+
+    .main-sarrera{
+        height: 40vh;
+    }
+
+    .main-sarrera-h1{
+        font-size: 10vw;
+        font-weight: lighter;
+    }
+    
+    .main-sarrera-desc{
+        max-width: 100vw;
+        font-size: 4vw;
     }
 }
