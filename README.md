@@ -42,7 +42,7 @@ Jarraitu beharreko urratsak:
 
 ## Sare konfigurazioa
 
-- Konfigurazioa mota: Zubias
+- Konfigurazioa mota: Zubi egokitzailea
 - Sare-parametroak esleitzeko metodoa: DHCP
 
     ![alt text](github_irudiak/dhcp.png)
