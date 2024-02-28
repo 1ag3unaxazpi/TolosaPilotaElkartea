@@ -21,7 +21,7 @@
             <div class="emaitza-txart-kont">
                 <?php
                     $connection = connection();
-                    $sql="SELECT kodea FROM partidua;";
+                    $sql="SELECT partidua.*, lehiaketa.izena as lehiaketa_izena FROM partidua INNER JOIN lehiaketa ON partidua.lehiaketa_kodea = lehiaketa.kodea;";
                     $query = mysqli_query($connection, $sql);
 
                     
@@ -30,9 +30,13 @@
                         while($row = mysqli_fetch_array($query)){
                             $urdinak="";
                             $gorriak="";
+                            $mota=$row["mota"];
+                            $data=$row["data"];
+                            $jardunaldia=$row["jardunaldia"];
                             $partiduKodea=$row["kodea"];
+                            $lehiaketaIzena=$row["lehiaketa_izena"];
 
-                            $sql2="SELECT  `kodea`, `pelotaria`.`izena`,`pelotaria`.`abizenak`,  `hasiera_ordua`,  `bukaera_ordua`,  `jardunaldia`, `lehiaketa_kodea`
+                            $sql2="SELECT  `kodea`, `emaitza`, `pelotaria`.`izena`,`pelotaria`.`abizenak`,  `hasiera_ordua`,  `bukaera_ordua`,  `jardunaldia`, `lehiaketa_kodea`
                             FROM `tolosa_pilota_elkartea`.`partidua` 
                             INNER JOIN jolastu ON partidua.kodea=jolastu.partidua_kodea
                             INNER JOIN pelotaria ON jolastu.pelotaria_nan = pelotaria.nan
@@ -43,10 +47,11 @@
                                 while($row = mysqli_fetch_array($query2)){
                                     $izena=$row["izena"] . " " . $row['abizenak'];
                                     $urdinak = $urdinak . " " . $izena;
+                                    $emaitzaU = $row['emaitza'];
                                 };
                             }
 
-                            $sql2="SELECT  `kodea`, `pelotaria`.`izena`,`pelotaria`.`abizenak`,  `hasiera_ordua`,  `bukaera_ordua`,  `jardunaldia`, `lehiaketa_kodea`
+                            $sql2="SELECT  `kodea`, `emaitza` ,`pelotaria`.`izena`,`pelotaria`.`abizenak`,  `hasiera_ordua`,  `bukaera_ordua`,  `jardunaldia`, `lehiaketa_kodea`
                             FROM `tolosa_pilota_elkartea`.`partidua` 
                             INNER JOIN jolastu ON partidua.kodea=jolastu.partidua_kodea
                             INNER JOIN pelotaria ON jolastu.pelotaria_nan = pelotaria.nan
@@ -57,92 +62,45 @@
                                 while($row = mysqli_fetch_array($query2)){
                                     $izena=$row["izena"] . " " . $row['abizenak'];
                                     $gorriak = $gorriak . " " . $izena;
+                                    $emaitzaG = $row['emaitza'];
                                 };
                             }
 
-                            echo $urdinak . " - " . $gorriak;
+                            $hilabeteak = ["Urtarrila", "Otsaila", "Martxoa", "Apirila", "Maiatza", "Ekaina", "Uztaila", "Abuztua", "Iraila", "Urria", "Azaroa", "Abendua"];
+
+                            echo '
+                            <div class="emaitza-txart">
+                                <div class="emaitza-txart-left">
+                                    <div class="emaitza-txart-left-hilabetea">
+                                        ' . $hilabeteak[date("m", strtotime($data)) - 1] . '
+                                    </div>
+                                    <div class="emaitza-txart-left-eguna">
+                                        ' . date("d", strtotime($data)) . '
+                                    </div>
+                                </div>
+                                <div class="emaitza-txart-center">
+                                    <div class="emaitza-txart-center-pilotariak">
+                                        ' . $urdinak . ' - ' . $gorriak . '
+                                    </div>
+                                    <div class="emaitza-txart-center-lehiaketa">
+                                        ' . $lehiaketaIzena . '
+                                    </div>
+                                </div>
+                                <div class="emaitza-txart-right">
+                                    <div class="emaitza-txart-right-gorri">
+                                        ' . $emaitzaG . '
+                                    </div>
+                                    <div class="emaitza-txart-right-urdin">
+                                        ' . $emaitzaU . '
+                                    </div>
+                                </div>
+                            </div>
+                            ';
                         };
                     }
                     
                 ?>
-                <div class="emaitza-txart">
-                    <div class="emaitza-txart-left">
-                        <div class="emaitza-txart-left-hilabetea">
-                            Otsailak
-                        </div>
-                        <div class="emaitza-txart-left-eguna">
-                            23
-                        </div>
-                    </div>
-                    <div class="emaitza-txart-center">
-                        <div class="emaitza-txart-center-pilotariak">
-                            Tolosa - Jaka VI
-                        </div>
-                        <div class="emaitza-txart-center-lehiaketa">
-                            Interpueblos
-                        </div>
-                    </div>
-                    <div class="emaitza-txart-right">
-                        <div class="emaitza-txart-right-gorri">
-                            22
-                        </div>
-                        <div class="emaitza-txart-right-urdin">
-                            16
-                        </div>
-                    </div>
-                </div>
-                <div class="emaitza-txart">
-                    <div class="emaitza-txart-left">
-                        <div class="emaitza-txart-left-hilabetea">
-                            Otsailak
-                        </div>
-                        <div class="emaitza-txart-left-eguna">
-                            18
-                        </div>
-                    </div>
-                    <div class="emaitza-txart-center">
-                        <div class="emaitza-txart-center-pilotariak">
-                            Tolosa - Jaka VI
-                        </div>
-                        <div class="emaitza-txart-center-lehiaketa">
-                            Interpueblos
-                        </div>
-                    </div>
-                    <div class="emaitza-txart-right">
-                        <div class="emaitza-txart-right-gorri">
-                            22
-                        </div>
-                        <div class="emaitza-txart-right-urdin">
-                            16
-                        </div>
-                    </div>
-                </div>
-                <div class="emaitza-txart">
-                    <div class="emaitza-txart-left">
-                        <div class="emaitza-txart-left-hilabetea">
-                            Otsailak
-                        </div>
-                        <div class="emaitza-txart-left-eguna">
-                            14
-                        </div>
-                    </div>
-                    <div class="emaitza-txart-center">
-                        <div class="emaitza-txart-center-pilotariak">
-                            Ezkurdia - Altuna
-                        </div>
-                        <div class="emaitza-txart-center-lehiaketa">
-                            Interpueblos
-                        </div>
-                    </div>
-                    <div class="emaitza-txart-right">
-                        <div class="emaitza-txart-right-gorri">
-                            13
-                        </div>
-                        <div class="emaitza-txart-right-urdin">
-                            22
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </main>
