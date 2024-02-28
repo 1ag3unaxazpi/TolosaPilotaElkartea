@@ -31,3 +31,18 @@
         ?>
     </div>
 </header>
+<div id="alert-cont" class="alert-cont">
+    <div class="alert-header">
+        <div class="alert-header-title" id="alert-header-title">
+
+        </div>
+        <button class="alert-header-close-bt" onclick="closeAlerta()">x</button>
+    </div>
+    <div class="alert-body">
+        <div class="alert-body-icon" id="alert-body-icon"></div>
+        <div class="alert-body-text" id="alert-body-text"></div>
+    </div>
+    <div class="alert-footer">
+        <button class="alert-footer-accept-bt" id="alert-button" onclick="closeAlerta()">Ados</button>
+    </div>
+</div>

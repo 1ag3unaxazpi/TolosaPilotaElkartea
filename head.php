@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/resources/pelota-icon.png" type="image/x-icon">
     <link rel="stylesheet" href="/bootstrap/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
+    <script src="/js/script.js"></script>
     <title>Tolosako Pilota Elkartea</title>
 </head>
 <?php include "funtzioak/db.php"; ?>
