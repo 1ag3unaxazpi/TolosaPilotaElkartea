@@ -102,7 +102,15 @@ ssh administrador@10.23.25.179
             #Include conf-available/serve-cgi-bin.conf
     </VirtualHost>
     ````
+- Zerbitzaria martxan jarri
 
+````
+systemctl start apache2
+````
+
+````
+systemctl enable apache2
+````
 
 ## MySQL Server instalazioa
 
@@ -120,5 +128,10 @@ ssh administrador@10.23.25.179
     bind-address            = 0.0.0.0
     mysqlx-bind-address     = 0.0.0.0
     ````
+    ````
+    systemctl start mysql
+    ````
+    ````
+    systemctl enable mysql
+    ````
 
-    
