@@ -4,7 +4,7 @@
         <img class="logo" src="/resources/logo.png" alt="">
     </div>
     <div class="header-center">
-        <a class="esteka" href="/index.php">Erabiltzaileak</a>
+        <a class="esteka" href="erabiltzaileak.php">Erabiltzaileak</a>
         <a class="esteka" href="/norgara.php">Ezarpenak</a>
         <a class="esteka" href="/historia.php">Historia</a>
         <a class="esteka" href="/bazkidetza.php">Bazkidetza</a>

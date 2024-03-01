@@ -264,7 +264,7 @@ main{
 .main-sarrera{
     display: flex;
     flex-direction: column;
-    height: calc(90vh - 24vw);
+    height: 100vh;
     background-repeat: no-repeat;
     background-size: 80%;
     background-position: top right;
@@ -449,6 +449,27 @@ main{
     padding: 10px;
 }
 
+.alb-cont{
+    margin: 10vw;
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+}
+
+.alb-img img{
+    width: 100%;
+}
+
+.alb-header{
+    text-align: justify;
+}
+
+.alb-desc{
+    text-align: justify;
+}
+
 /** KONTAKTUA **/
 
 .kontaktua-cont{
@@ -567,6 +588,21 @@ main{
     outline: none;
 }
 
+.erab-cont input[type="password"]{
+    border: none;
+    border-bottom: 1px solid rgb(206, 206, 206);
+    color: rgb(41, 41, 41);
+    background: none;
+    height: 50px;
+    width: 100%;
+    font-family: Montserrat;
+    margin-bottom: 20px;
+}
+
+.erab-cont input[type="password"]:focus{
+    outline: none;
+}
+
 .erab-bt-gorde{
     border-radius: 3px;
     border: none;
@@ -603,6 +639,16 @@ main{
     font-size: 30px;
 }
 
+.erabil-table-cont{
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+    margin-top: 40px;
+}
+
+.erabil-table-cont table{
+    flex-grow: 1;
+}
 
 
 /** FIN ADMIN **/
@@ -693,6 +739,65 @@ main{
     background-color: var(--kolore-nagusia-hover);
 }
 
+/** FIN ALERT **/
+
+.filter-cont{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: start;
+    border: 1px solid rgba(128, 128, 128, 0.199);
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+.filter-ind{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    min-width: 10%;
+}
+
+.filter-ind select{
+    padding: 10px;
+    border: 1px solid rgb(223, 223, 223);
+    border-radius: 3px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.filter-ind label{
+    padding: 10px;
+    border: 1px solid rgb(223, 223, 223);
+    border-right: none;
+    border-radius: 3px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color: rgb(245, 243, 239);
+    font-weight: 500;
+}
+
+.emaitz-ez-cont{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+}
+
+.emaitz-ez-desc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: rgb(167, 167, 167);
+}
+
+.emaitz-ez-desc img{
+    max-width: 20%;
+    opacity: 0.5;
+}
+
 
 footer{
     height: 15vh;
@@ -772,5 +877,14 @@ footer{
 
     #erab{
         flex-direction: column;
+    }
+
+    .filter-cont{
+        flex-direction: column;
+        justify-content: stretch;
+    }
+
+    .filter-ind{
+        flex-grow: 1;
     }
 }

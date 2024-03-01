@@ -9,6 +9,7 @@
         <a class="esteka" href="/historia.php">Historia</a>
         <a class="esteka" href="/bazkidetza.php">Bazkidetza</a>
         <a class="esteka" href="/palmaresa.php">Palmaresa</a>
+        <a class="esteka" href="/emaitzak.php">Emaitzak</a>
     </div>
     <div class="header-right">
         <?php

@@ -36,7 +36,7 @@
                 </div>
                 <div class="erab-column">
                     <div class="erab-row-ind">
-                        <input value="<?php if(isset($_SESSION['username'])) {echo $_SESSION['username'];} ?>" placeholder="Erabiltzailea" type="text" name="username" disabled>
+                        <input value="<?php if(isset($_SESSION['password'])) {echo $_SESSION['password'];} ?>" placeholder="Pasahitza" type="password" name="password">
                         <input value="<?php if(isset($_SESSION['username'])) {echo $_SESSION['username'];} ?>" style="display: none;" placeholder="Erabiltzailea" type="text" name="username">
                     </div>
                     <div class="erab-row-ind">

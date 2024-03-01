@@ -13,6 +13,7 @@ function connection(){
     if(!$connection)
     {
         die("Konexio-errorea");
+        header("Location: login.php");
     }
     return $connection;
 }
@@ -28,9 +29,9 @@ function connection(){
  * @param mixed $helbidea Erabiltzailearen helbidea.
  * @return void
  */
-function erabiltzaileaAldatu($username, $izena, $abizena, $email, $tlf, $helbidea){
+function erabiltzaileaAldatu($username, $izena, $abizena, $password, $email, $tlf, $helbidea){
     $connection = connection();
-    $sql="UPDATE `erabiltzailea` SET `izena`='$izena', `abizenak`='$abizena', `email`='$email', `telefonoa`='$tlf', `helbidea`='$helbidea' WHERE username='$username'";
+    $sql="UPDATE `erabiltzailea` SET `izena`='$izena', `abizenak`='$abizena', `pasahitza`='$password', `email`='$email', `telefonoa`='$tlf', `helbidea`='$helbidea' WHERE username='$username'";
     $query = mysqli_query($connection, $sql);
 }
 
@@ -264,7 +265,15 @@ function emaitzaGuztiak(){
 }
 function getAlbisteak(){
     $connection = connection();
-    $sql="SELECT `titulua`, `deskripzioa`, `irudia` FROM albistea ORDER BY albistea.data desc LIMIT 4";
+    $sql="SELECT * FROM albistea ORDER BY albistea.data desc LIMIT 4";
+    $query = mysqli_query($connection, $sql);
+
+    return $query;
+}
+
+function getAlbistea($id){
+    $connection = connection();
+    $sql="SELECT * FROM albistea WHERE kodea=$id ORDER BY albistea.data desc";
     $query = mysqli_query($connection, $sql);
 
     return $query;
@@ -277,8 +286,9 @@ function ateraAlbistea() {
             $albistea_titulua=$row["titulua"];
             $albistea_deskripzioa=$row["deskripzioa"];
             $albistea_irudia=$row["irudia"];
+            $albistea_kodea=$row["kodea"];
             echo '
-            <div class="albistea-txart">
+            <div class="albistea-txart" onclick="window.location.href=`albistea.php?id='. $albistea_kodea .'`">
                 <div class="albistea-txart-img">
                     <img src="data:image/jpeg;base64,'. $albistea_irudia .'" alt="">
                 </div>
@@ -292,9 +302,39 @@ function ateraAlbistea() {
             ';
         };
         
-    }
+    }    
+}
 
-    
+function getErabiltzaileak(){
+    $connection = connection();
+    $sql="SELECT * FROM erabiltzailea WHERE aktibo=1";
+    $query = mysqli_query($connection, $sql);
+
+    return $query;
+}
+
+function getLehiaketak(){
+    $connection = connection();
+    $sql="SELECT * FROM lehiaketa";
+    $query = mysqli_query($connection, $sql);
+
+    return $query;
+}
+
+function getLehiaketaIzenak(){
+    $connection = connection();
+    $sql="SELECT izena FROM lehiaketa GROUP BY izena";
+    $query = mysqli_query($connection, $sql);
+
+    return $query;
+}
+
+function getKategoriak(){
+    $connection = connection();
+    $sql="SELECT kategoria FROM lehiaketa GROUP BY kategoria";
+    $query = mysqli_query($connection, $sql);
+
+    return $query;
 }
 
 ?>

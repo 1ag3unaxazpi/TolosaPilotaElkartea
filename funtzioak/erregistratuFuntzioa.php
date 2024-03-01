@@ -16,6 +16,7 @@
 
     session_start(); 
     $_SESSION['username']=$username;
+    $_SESSION['password']=$password;
     $_SESSION['izena']=$izena;
     $_SESSION['abizena']=$abizena;
     $_SESSION['email']=$email;
