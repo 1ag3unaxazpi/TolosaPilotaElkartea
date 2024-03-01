@@ -2,7 +2,7 @@
     include "db.php";
     $username_form=$_POST['username_form'];
     $password_form=$_POST['password_form'];
-    $sql = "SELECT * FROM `erabiltzailea` WHERE username = '$username_form' AND pasahitza ='$password_form'";
+    $sql = "SELECT * FROM `erabiltzailea` WHERE username = '$username_form' AND pasahitza ='$password_form' AND aktibo=1";
     $connection= connection();
     $query = mysqli_query($connection, $sql);
 

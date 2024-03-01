@@ -35,6 +35,12 @@ function erabiltzaileaAldatu($username, $izena, $abizena, $password, $email, $tl
     $query = mysqli_query($connection, $sql);
 }
 
+function bajaEman($username){
+    $connection = connection();
+    $sql="UPDATE `erabiltzailea` SET `aktibo`=0 WHERE username='$username'";
+    $query = mysqli_query($connection, $sql);
+}
+
 /**
  * Erabiltzailearen pasahitza eguneratzen du datu-basean.
  *

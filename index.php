@@ -21,7 +21,7 @@
             <div class="emaitza-txart-kont">
                 <?php
                     $connection = connection();
-                    $sql="SELECT partidua.*, lehiaketa.izena as lehiaketa_izena FROM partidua INNER JOIN lehiaketa ON partidua.lehiaketa_kodea = lehiaketa.kodea;";
+                    $sql="SELECT partidua.*, lehiaketa.izena as lehiaketa_izena FROM partidua INNER JOIN lehiaketa ON partidua.lehiaketa_kodea = lehiaketa.kodea WHERE data< '". date('Y-m-d') ."';";
                     $query = mysqli_query($connection, $sql);
 
                     
@@ -92,6 +92,55 @@
                                     </div>
                                     <div class="emaitza-txart-right-urdin">
                                         ' . $emaitzaU . '
+                                    </div>
+                                </div>
+                            </div>
+                            ';
+                        };
+                    }
+                    
+                ?>
+                
+            </div>
+
+            <h2 class="sec-title">Hurrengo <b>partiduak</b></h2>
+            <div class="emaitza-txart-kont">
+                <?php
+                    $connection = connection();
+                    $sql="SELECT partidua.*, lehiaketa.izena as lehiaketa_izena FROM partidua INNER JOIN lehiaketa ON partidua.lehiaketa_kodea = lehiaketa.kodea WHERE data>= '". date('Y-m-d') ."';";
+                    $query = mysqli_query($connection, $sql);
+
+                    
+
+                    if(mysqli_num_rows($query)>0){
+                        while($row = mysqli_fetch_array($query)){
+                            $mota=$row["mota"];
+                            $data=$row["data"];
+                            $hasiera_ordua=$row["hasiera_ordua"];
+                            $jardunaldia=$row["jardunaldia"];
+                            $partiduKodea=$row["kodea"];
+                            $lehiaketaIzena=$row["lehiaketa_izena"];
+
+                            
+
+                            $hilabeteak = ["Urtarrila", "Otsaila", "Martxoa", "Apirila", "Maiatza", "Ekaina", "Uztaila", "Abuztua", "Iraila", "Urria", "Azaroa", "Abendua"];
+
+                            echo '
+                            <div class="emaitza-txart">
+                                <div class="emaitza-txart-left">
+                                    <div class="emaitza-txart-left-hilabetea">
+                                        ' . $hilabeteak[date("m", strtotime($data)) - 1] . '
+                                    </div>
+                                    <div class="emaitza-txart-left-eguna">
+                                        ' . date("d", strtotime($data)) . '
+                                    </div>
+                                </div>
+                                <div class="emaitza-txart-center">
+                                    <div class="emaitza-txart-center-pilotariak">
+                                        <h2>' . $lehiaketaIzena . '</h2>
+                                    </div>
+                                    <div class="emaitza-txart-center-lehiaketa">
+                                        ' . $hasiera_ordua . '
                                     </div>
                                 </div>
                             </div>

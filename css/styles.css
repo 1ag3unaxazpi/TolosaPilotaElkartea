@@ -622,6 +622,23 @@ main{
     box-shadow: rgba(134, 132, 131, 0.212) 0px 0px 3px 2px;
 }
 
+.baja-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.baja-bt{
+    border: none;
+    padding: 10px;
+    padding-inline: 20px;
+    background-color: rgb(230, 109, 109);
+    color: rgb(87, 14, 14);
+    border-radius: 25px;
+}
+
 
 /** ADMIN **/
 
@@ -661,7 +678,7 @@ main{
     justify-content: stretch;
     align-items: stretch;
     width: 28vw;
-    height: 25vh;
+    min-height: 25vh;
     background-color: white;
     border-radius: 5px;
     box-shadow: rgba(8, 8, 8, 0.301) 0px 0px 30px 1px;
@@ -688,6 +705,7 @@ main{
     height: 20%;
     align-items: center;
     justify-content: center;
+    padding: 20px;
 }
 
 .alert-header-title{
@@ -716,6 +734,8 @@ main{
     align-items: center;
     justify-content: center;
     flex-grow: 1;
+    font-size: 70px;
+    font-weight: 200;
 }
 
 .alert-body-text{
@@ -723,11 +743,15 @@ main{
     align-items: start;
     justify-content: center;
     flex-grow: 1;
+    padding: 10px;
+    text-align: center;
 }
 
 
 .alert-footer-accept-bt{
     background-color: var(--kolore-nagusia);
+    color: white;
+    padding: 10px;
     padding-inline: 20px;
     border: none;
     border-radius: 5px;

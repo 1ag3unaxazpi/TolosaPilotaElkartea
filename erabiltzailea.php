@@ -44,6 +44,9 @@
                     </div>
                 </div>
             </form>
+            <div class="baja-cont">
+                <button class="baja-bt" onclick="alerta('Zihur erabiltzailea ezabatu nahi duzula? Baizkoa izank egin klik onartu botoian bestela itxi ezazu lehilatila hau', 'Zihur?', `<i class='bi bi-exclamation-triangle'></i>`,'window.location.href=`funtzioak/bajaEman.php?username=<?php echo $_SESSION['username']; ?>`')"><i class="bi bi-x-lg"></i> Baja eman</button>
+            </div>
             <?php
                 if(isset($_GET['success'])){
                     if($_GET['success']){

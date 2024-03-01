@@ -8,7 +8,7 @@
         $kategoria=$_GET['kategoria'];
 
         $connection = connection();
-        $sql="SELECT partidua.*, lehiaketa.izena as lehiaketa_izena FROM partidua INNER JOIN lehiaketa ON partidua.lehiaketa_kodea = lehiaketa.kodea WHERE lehiaketa.izena='$lehiaketa' AND kategoria='$kategoria'";
+        $sql="SELECT partidua.*, lehiaketa.izena as lehiaketa_izena FROM partidua INNER JOIN lehiaketa ON partidua.lehiaketa_kodea = lehiaketa.kodea WHERE data< '". date('Y-m-d') ."' AND lehiaketa.izena='$lehiaketa' AND kategoria='$kategoria'";
         $query = mysqli_query($connection, $sql);
 
 
