@@ -1,3 +1,24 @@
+# Tolosa pelota kirol elkartea - Webgunea
+
+- [Tolosa pelota kirol elkartea - Webgunea](#tolosa-pelota-kirol-elkartea---webgunea)
+    - [Erabiltzaile arruntak](#erabiltzaile-arruntak)
+    - [Administratzailearen erabiltzailea](#administratzailearen-erabiltzailea)
+
+
+## Erabiltzaile arruntak
+
+- 1ag3.andegomez (pasahitza: pvlbtnse)
+- 1ag3.andofern (pasahitza: pvlbtnse)
+- 1ag3.crismull (pasahitza: pvlbtnse)
+- 1ag3.jokipeti (pasahitza: pvlbtnse)
+- 1ag3.unaxazpi (pasahitza: pvlbtnse)
+- 1ag3.xubagarc (pasahitza: pvlbtnse)
+
+## Administratzailearen erabiltzailea
+
+- admin (pasahitza: admin)
+
+<br> <br> 
 
 # Tolosa pelota kirol elkartea - Zerbitzaria
 
